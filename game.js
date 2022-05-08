@@ -100,11 +100,31 @@ function keydown(event) {
 }
 
 
-function myLoadFunction() {
+function clickStart() {
 	timeout = setInterval(move, 10);
 	document.addEventListener('keydown', keydown);
 	document.addEventListener('keyup', keyup);
+
+	var start = document.getElementsByClassName('start')[0];
+	start.style.display = 'none';
 }
+
+function showSpaceships() {
+	var spaceships = document.createElement('div');
+	spaceships.classList = 'alien';
+	
+}
+
+
+
+function myLoadFunction() {
+	var start = document.getElementsByClassName('start')[0];
+	start.addEventListener('click', clickStart)
+	// timeout = setInterval(move, 10);
+	// document.addEventListener('keydown', keydown);
+	// document.addEventListener('keyup', keyup);
+}
+
 
 
 document.addEventListener('DOMContentLoaded', myLoadFunction);
